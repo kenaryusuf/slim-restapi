@@ -86,7 +86,7 @@ return function (App $app) {
         }
     });
 
-    $app->get('posts/{id}/comments', function (Request $request, Response $response) {
+    $app->get('/posts/{id}/comments', function (Request $request, Response $response) {
         $db = new \App\Databse\Db();
         $db = $db->connect();
         try {
