@@ -2,11 +2,11 @@
 
 namespace App\Console;
 
-use App\Databse\CreateDb;
+use App\Database\CreateDb;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use App\Databse\Db;
+use App\Database\Db;
 use GuzzleHttp\Client;
 
 final class ExampleCommand extends Command

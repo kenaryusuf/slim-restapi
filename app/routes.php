@@ -6,7 +6,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Psr7\Stream;
-use App\Databse\Db;
+use App\Database\Db;
 
 return function (App $app) {
     $app->options('/{routes:.*}', function (Request $request, Response $response) {
@@ -55,7 +55,7 @@ return function (App $app) {
 
     $app->get('/comments', function (Request $request, Response $response) {
         try {
-            $db = new \App\Databse\Db();
+            $db = new \App\Database\Db();
             $db = $db->connect();
             $comments = $db->query("SELECT * FROM comments")->fetchAll(PDO::FETCH_OBJ);
 
@@ -87,7 +87,7 @@ return function (App $app) {
     });
 
     $app->get('/posts/{id}/comments', function (Request $request, Response $response) {
-        $db = new \App\Databse\Db();
+        $db = new \App\Database\Db();
         $db = $db->connect();
         try {
             $id = $request->getAttribute("id");
